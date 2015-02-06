@@ -8,7 +8,7 @@ body {
 
 .page-wrapper {
   // position: relative;
-  width: 1050px;
+  width: 600px;
   margin: 0 auto;
 }
 
@@ -23,19 +23,10 @@ body {
 // }
 
 
-.bg-image {
-
+.card {
   width: $cardWidth;
   height: $cardHeight;
-  background: url(../images/cards_1027x615.png) 0 0;
-
-  // left: 0;
-  // width: 79px;
-  // // height: 123px;
-  // // background-image: url(http://parkerbennett.com/croptop/img/photo-wedding_1200x800.jpg);
-  // background-image: url(../images/cards_1027x615.png) -79px -123px;
-  // // background-position: top left;
-  // // background-size: cover;
+  background: url(../images/cards_1027x615.png) -12*$cardWidth -3*$cardHeight;
 
   /* prevent scaling past src width (or not) */
   /* max-width: 1200px; */

@@ -11,13 +11,14 @@ Classes:
    - setOptions (optional)
    - initialize
    - renderPlayers
+   - renderCard
    - renderHand
    - declareWinner
  - Player
    - getCashBalance
    - placeBet
    - fold
- - Player
+ - Computer
    - placeBet
    - fold
  - Shoe

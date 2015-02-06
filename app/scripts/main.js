@@ -16,10 +16,16 @@
 
 // });
 
+// var gameDeck;
 var game = new Game();
 game.init();
 
-console.log(game.playersArray());
+game.dealCards();
 
-console.log(game.players);
+console.log(game.gameDeck.cards);
+
+console.log(game.players.Player2.hand);
+
+
+
 

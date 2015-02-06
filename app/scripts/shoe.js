@@ -7,7 +7,7 @@ var Shoe = function (options) {
 
   // Private variables
   var ranks = '23456789TJQKA'.chars(),  // Ace is high
-      suits = 'CDSH'.chars();           // Clubs, Diamonds, Spades, Hearts
+      suits = 'CDHS'.chars();           // Clubs, Diamonds, Hearts, Spades
 
   // Public variables
   // Initialize and build this.cards array (could be multiple decks)
