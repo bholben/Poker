@@ -26,7 +26,7 @@ body {
 .card {
   width: $cardWidth;
   height: $cardHeight;
-  background: url(../images/cards_1027x615.png) -12*$cardWidth -3*$cardHeight;
+  // background: url(../images/cards_1027x615.png) -11*$cardWidth -2*$cardHeight;
 
   /* prevent scaling past src width (or not) */
   /* max-width: 1200px; */

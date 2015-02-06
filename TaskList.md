@@ -24,6 +24,9 @@ Classes:
  - Shoe
    - shuffle
    - dealCard
+ - Deck
+   - init
+   - showCard
  - Hand
    - addCard
    - rankHand
