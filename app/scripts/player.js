@@ -13,6 +13,11 @@ Player.prototype.addCard = function (card) {
 };
 
 
-
+Player.prototype.showCard = function (player, cardLoc, cardName) {
+  // Show the sprite zone
+  var background = 'background: url(../images/cards_1027x615.png) ',
+      spriteOffset = game.deck.cardImageMap[cardName];
+  $(player + ' ' + cardLoc).attr('style', background + spriteOffset);
+};
 
 

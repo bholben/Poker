@@ -1,30 +1,16 @@
 
-var Shoe = function (options) {
+var Shoe = function (decksInShoe) {
   // Initialize options object and defaults
-  options = options || {};
-  options.decksInShoe = options.decksInShoe || 1;
-  options.jokers = options.jokers || false;
 
-  // Private variables
-  var ranks = '23456789TJQKA'.chars(),  // Ace is high
-      suits = 'CDHS'.chars();           // Clubs, Diamonds, Hearts, Spades
-
-  // Public variables
-  // Initialize and build this.cards array (could be multiple decks)
-  // i.e. ['2C', '3C', ... 'QH', 'KH', 'AH']
   this.cards = [];
+
   this.init = function () {
-    for (var d in _.range(options.decksInShoe)) {
-      for (var s in suits) {
-        for (var r in ranks) {
-          this.cards.push(ranks[r] + suits[s]);
-        }
-      }
-      if (options.jokers) {
-        this.cards.push('?B');  // Black Joker
-        this.cards.push('?R');  // Red Joker
-      }
-    }
+    // Convert cards array into a string.
+    var cardsStr = game.deck.cards.join(',') + ',';
+    // Multiply the cards string by the number of decks in the shoe.
+    var shoe = Array(decksInShoe + 1).join(cardsStr);
+    // Convert back to an array and remove the last trailing comma item.
+    this.cards = shoe.split(',').slice(0, -1);
   };
 };
 

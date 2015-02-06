@@ -1,13 +1,14 @@
 
 $cardWidth: 79px;
 $cardHeight: 123px;
+$cardOffset: 20px;
 
 body {
   font-family: Helvetica, Arial, sans-serif;
 }
 
 .page-wrapper {
-  // position: relative;
+  position: relative;
   width: 600px;
   margin: 0 auto;
 }
@@ -24,12 +25,30 @@ body {
 
 
 .card {
+  position: absolute;
+  left: 0 * $cardOffset;
   width: $cardWidth;
   height: $cardHeight;
   // background: url(../images/cards_1027x615.png) -11*$cardWidth -2*$cardHeight;
 
   /* prevent scaling past src width (or not) */
   /* max-width: 1200px; */
+}
+
+.card2 {
+  left: 1 * $cardOffset;
+}
+
+.card3 {
+  left: 2 * $cardOffset;
+}
+
+.card4 {
+  left: 3 * $cardOffset;
+}
+
+.card5 {
+  left: 4 * $cardOffset;
 }
 
 

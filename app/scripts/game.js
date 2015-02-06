@@ -29,26 +29,26 @@ var Game = function (options) {
     // Give the human player a real name and position in the middle.
     var playerPosition = Math.round(this.numPlayers / 2);
     game.players['Player' + playerPosition].name = this.playerName;
-    console.log(this.players);
+  };
+
+  // Initialize a single deck of cards.
+  this.initializeDeck = function (jokers) {
+    this.deck = new Deck(jokers);
+    this.deck.init();
   };
 
   // Initialize the gameDeck (could be multiple decks in a shoe).
-  this.initializeShoe = function (decksInShoe, jokers) {
-    this.gameDeck = new Shoe({
-      decksInShoe: decksInShoe,
-      jokers: jokers
-    });
+  this.initializeShoe = function (decksInShoe) {
+    this.gameDeck = new Shoe(decksInShoe);
     this.gameDeck.init();
-    // this.gameDeck.shuffle();
-    console.log(this.gameDeck.cards);
+    this.gameDeck.shuffle();
   };
 
   // Initialize the game.
   this.init = function () {
-    var deck;
     this.initializePlayers();
-    deck = new Deck(this.jokers);
-    this.initializeShoe(this.decksInShoe, this.jokers);
+    this.initializeDeck();
+    this.initializeShoe(this.decksInShoe);
   };
 };
 
