@@ -1,0 +1,45 @@
+
+$cardWidth: 79px;
+$cardHeight: 123px;
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.page-wrapper {
+  // position: relative;
+  width: 1050px;
+  margin: 0 auto;
+}
+
+
+// .card {
+//   // position: absolute;
+//   // top: 0;
+//   // left: 100px;;
+//   width: $cardWidth;
+//   height: $cardHeight;
+//   overflow: hidden;
+// }
+
+
+.bg-image {
+
+  width: $cardWidth;
+  height: $cardHeight;
+  background: url(../images/cards_1027x615.png) 0 0;
+
+  // left: 0;
+  // width: 79px;
+  // // height: 123px;
+  // // background-image: url(http://parkerbennett.com/croptop/img/photo-wedding_1200x800.jpg);
+  // background-image: url(../images/cards_1027x615.png) -79px -123px;
+  // // background-position: top left;
+  // // background-size: cover;
+
+  /* prevent scaling past src width (or not) */
+  /* max-width: 1200px; */
+}
+
+
+
