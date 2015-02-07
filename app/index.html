@@ -27,28 +27,91 @@
 
       <div class="top-buttons text-center">
         <button id="new-game" class="btn btn-primary">New Game</button>
-        <button id="options" class="btn btn-default" data-toggle="modal" data-target="#myModal">Options</button>
+        <button id="options" class="btn btn-default" data-toggle="modal" data-target="#optionsModal">Options</button>
       </div>
 
-      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal fade" id="optionsModal" tabindex="-1" role="dialog" aria-labelledby="optionsModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <h4 class="modal-title" id="optionsModalLabel">Game Options</h4>
             </div>
             <div class="modal-body">
 
-              <h4>Number of players:</h4>
-              <div id="num-players" class="btn-group" data-toggle="buttons">
-                <label class="btn btn-default active">
-                  <input type="radio" checked>3
-                </label>
-                <label class="btn btn-default">
-                  <input type="radio">5
-                </label>
-              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div>
+                    <label>Game</label>
+                  </div>
+                  <select class="form-control">
+                    <option>Five Card Draw</option>
+                    <option disabled>Seven Card Draw</option>
+                    <option disabled>Five Card Stud</option>
+                    <option disabled>Seven Card Stud</option>
+                  </select>
 
+                  <div>
+                    <label>Decks in the shoe</label>
+                  </div>
+                  <select class="form-control">
+                    <option>1</option>
+                    <option disabled>2</option>
+                    <option disabled>3</option>
+                    <option disabled>4</option>
+                    <option disabled>5</option>
+                    <option disabled>6</option>
+                  </select>
+
+                  <div>
+                    <label>Jokers?</label>
+                  </div>
+                  <div id="jokers" class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-default active">
+                      <input type="radio">Yes
+                    </label>
+                    <label class="btn btn-default">
+                      <input type="radio" checked>No
+                    </label>
+                  </div>
+                </div>
+
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="name">Your name</label>
+                    <input type="text" class="form-control" id="name">
+                  </div>
+
+                  <div>
+                    <label>Number of players</label>
+                  </div>
+                  <div id="num-players" class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-default active">
+                      <input type="radio" checked>3
+                    </label>
+                    <label class="btn btn-default">
+                      <input type="radio">5
+                    </label>
+                  </div>
+
+                  <div>
+                    <label>Deal Speed</label>
+                  </div>
+                  <div id="deal-speed" class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-default active">
+                      <input type="radio">Slow
+                    </label>
+                    <label class="btn btn-default">
+                      <input type="radio" checked>Medium
+                    </label>
+                    <label class="btn btn-default">
+                      <input type="radio">Fast
+                    </label>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
