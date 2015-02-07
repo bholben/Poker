@@ -6,12 +6,11 @@ var Game = function (opt) {
   var options = {
     playerName: opt.playerName || 'Leisure Suit Larry',
     variant: opt.variant || '5 Card Draw',
-    numCompetitors: opt.numCompetitors || 2,
+    numPlayers: opt.numPlayers || 3,
     dealSpeed: opt.dealSpeed || 'fast',
     decksInShoe: opt.decksInShoe || 1,
     jokers: opt.jokers || false
   };
-  options.numPlayers = options.numCompetitors + 1;
   if (options.variant === '5 Card Draw') {
     // this.numCardsInit = 5;
     options.decksInShoe = 1;
