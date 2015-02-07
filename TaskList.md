@@ -1,8 +1,13 @@
 ## Task List
 
- - Extract card from sprite - figure out how.
- - Object classes - decide on architecture.
- -
+TODO:
+
+ + Extract card from sprite - figure out how.
+ + Object classes - decide on architecture.
+
+Nice-to-haves:
+
+ - Swap out sprite for one with jokers
 
 
 Classes:

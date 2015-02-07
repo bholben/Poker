@@ -1,0 +1,50 @@
+---
+# Development notes with sample values for a given game instance
+# to help me keep my object structure straight
+# var game = new Game();
+# game.players.player1, et all = new Player();
+# game.deck = new Deck();
+# game.gameDeck = new Shoe();
+
+game:
+  # all options are privately initialized
+  options:
+    playerName: Leisure Suit Larry
+    variant: 5 Card Draw
+    numCompetitors: 2
+    dealSpeed: fast
+    decksInShoe: 1
+    jokers: false
+    numPlayers: f(numCompetitors)
+  # numCardsInit: 5
+
+  players:
+    player1:  # computer player
+      name: Player1
+      hand: [KH, KC, 3S, TC, QS]
+      addCard: function()
+      showCard: function()
+
+    player2:  # human player
+      name: Leisure Suit Larry
+      hand: [7S, 2H, 3C, 6H, TD]
+      addCard: function ()
+      showCard: function ()
+
+    player3:  # computer player
+      name: Player3
+      hand: [5H, AS, AH, 7C, QC]
+      addCard: function ()
+      showCard: function ()
+
+  deck:
+    cards: [AC, 2C, ..., QS, KS]  # single deck
+    cardImageMap: {AC: 0px 0px, fulldeck: x y, KS: -948px -369px}
+
+  gameDeck:
+    cards: [AC, 2C, ..., QS, KS]  # single or multiple decks
+    shuffle: function ()
+    dealCard: function ()
+    count: function ()
+
+

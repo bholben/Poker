@@ -1,44 +1,33 @@
 
+var options = {},
+    game;
 
-// var form = $('form'),
-//     pokerTable = $('.poker-table');
+// Adjust game options based on user input.
+$('.num-competitors').on('click', 'label', function (e) {
+  options.numCompetitors = Number($(this)[0].innerText);
+});
 
-// form.on('submit', function (e) {
+$('#new-game').on('click', function () {
 
-//   e.preventDefault();
+  console.log('Hello');
 
-//   var options = $(this).serialize(),
-//       game = new Game(options);
+  game = new Game(options);
+  game.init();
+  var freshDeck = game.gameDeck.cards;
+  game.dealCards(7);
 
-//   game.init();
-//   form.addClass('hide');
-//   pokerTable.removeClass('hide');
-//   game.dealCards();
-
-// });
-
-// var gameDeck;
-var game = new Game();
-game.init();
-var freshDeck = game.gameDeck.cards;
-game.dealCards();
-
-var remainingDeck = game.gameDeck.cards;
-var myHand = game.players.Player2.hand;
+  var remainingDeck = game.gameDeck.cards;
+  var myHand = game.players.player2.hand;
 
 
-game.players.Player1.showCard('.player1', '.card1', myHand[0]);
-game.players.Player1.showCard('.player1', '.card2', myHand[1]);
-game.players.Player1.showCard('.player1', '.card3', myHand[2]);
-game.players.Player1.showCard('.player1', '.card4', myHand[3]);
-game.players.Player1.showCard('.player1', '.card5', myHand[4]);
+  game.players.player1.showCard('.player1', '.card1', myHand[0]);
+  game.players.player1.showCard('.player1', '.card2', myHand[1]);
+  game.players.player1.showCard('.player1', '.card3', myHand[2]);
+  game.players.player1.showCard('.player1', '.card4', myHand[3]);
+  game.players.player1.showCard('.player1', '.card5', myHand[4]);
+  game.players.player1.showCard('.player1', '.card6', myHand[5]);
+  game.players.player1.showCard('.player1', '.card7', myHand[6]);
 
+  console.log(myHand);
 
-// console.log(game.players);
-// console.log(freshDeck);
-// console.log(remainingDeck);
-console.log(myHand);
-
-
-
-
+});

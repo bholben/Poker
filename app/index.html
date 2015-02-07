@@ -4,12 +4,13 @@
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
-    <title>15 Poker</title>
+    <title>Poker</title>
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="../bower_components/normalize-css/normalize.css" />
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css" />
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -21,7 +22,41 @@
   <body>
     <div class="page-wrapper">
 
-      <h1>Poker!</h1>
+      <img class="center-block" src="../images/lets_play_poker1.png">
+      <img class="variant center-block" src="../images/five_card_draw.gif">
+
+      <div class="top-buttons text-center">
+        <button id="new-game" class="btn btn-primary">New Game</button>
+        <button id="options" class="btn btn-default" data-toggle="modal" data-target="#myModal">Options</button>
+      </div>
+
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+            </div>
+            <div class="modal-body">
+
+              <h4>Number of competitors:</h4>
+              <div class="btn-group num-competitors" data-toggle="buttons">
+                <label class="btn btn-default active">
+                  <input type="radio" checked>2
+                </label>
+                <label class="btn btn-default">
+                  <input type="radio">4
+                </label>
+              </div>
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
 
       <div class="player1">
         <div class="card card1"></div>
@@ -29,6 +64,8 @@
         <div class="card card3"></div>
         <div class="card card4"></div>
         <div class="card card5"></div>
+        <div class="card card6"></div>
+        <div class="card card7"></div>
       </div>
 
 
@@ -39,6 +76,7 @@
     <!-- bower:js -->
     <script src="../bower_components/jquery/dist/jquery.js"></script>
     <script src="../bower_components/underscore/underscore.js"></script>
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -46,7 +84,6 @@
     <script src="scripts/utils.js"></script>
     <script src="scripts/deck.js"></script>
     <script src="scripts/shoe.js"></script>
-    <script src="scripts/hand.js"></script>
     <script src="scripts/player.js"></script>
     <script src="scripts/game.js"></script>
     <script src="scripts/main.js"></script>
