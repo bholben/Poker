@@ -1,7 +1,8 @@
 
 var Game = function (opt) {
   'use strict';
-  // Initialize default options
+
+  // Initialize parameters.
   opt = opt || {};
   var options = {
     playerName: opt.playerName || 'Leisure Suit Larry',
@@ -12,17 +13,16 @@ var Game = function (opt) {
     jokers: opt.jokers || false
   };
   if (options.variant === '5 Card Draw') {
-    // this.numCardsInit = 5;
-    options.decksInShoe = 1;
+    options.decksInShoe = 2;
     options.jokers = false;
   }
 
   this.players = {};
 
-  // Initialize the game.
+  // Initialize a game with players and a deck shoe.
   this.init = function () {
-    // Initialize this.players.Player1 = Player(),
-    //            this.players.Player2 = Player()...
+    // Initialize this.players.player1 = Player(),
+    //            this.players.player2 = Player()...
     var game = this;
     _.range(options.numPlayers).forEach(function (i) {
       var name = 'Player' + String(i + 1);
@@ -34,21 +34,9 @@ var Game = function (opt) {
 
     // Initialize a single deck of cards.
     this.deck = new Deck(options.jokers);
-    this.deck.init();
 
     // Initialize the gameDeck (could be multiple decks in a shoe).
     this.gameDeck = new Shoe(options.decksInShoe);
-    this.gameDeck.init();
-    this.gameDeck.shuffle();
   };
-};
-
-Game.prototype.dealCards = function (num) {
-  'use strict';
-  for (var n in _.range(num)) {
-    for (var p in this.players) {
-      this.players[p].addCard(this.gameDeck.dealCard());
-    }
-  }
 };
 

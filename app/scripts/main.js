@@ -11,7 +11,7 @@ $('#new-game').on('click', function () {
 
   game = new Game(options);
   game.init();
-  game.dealCards(5);
+  game.gameDeck.dealAround(5);
 
   var player1Hand = game.players.player1.hand;
   var player2Hand = game.players.player2.hand;

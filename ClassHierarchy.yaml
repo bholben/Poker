@@ -38,13 +38,11 @@ game:
       showCard: function ()
 
   deck:
-    cards: [AC, 2C, ..., QS, KS]  # single deck
+    cards: [AC, 2C, ..., QS, KS]  # single ordered deck
     cardImageMap: {AC: 0px 0px, fulldeck: x y, KS: -948px -369px}
 
   gameDeck:
-    cards: [AC, 2C, ..., QS, KS]  # single or multiple decks
-    shuffle: function ()
-    dealCard: function ()
+    cards: [AC, 2C, ..., QS, KS]  # shuffled cards (1 or more decks)
+    dealCardTo: function ()
+    dealAround: function ()
     count: function ()
-
-

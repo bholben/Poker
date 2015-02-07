@@ -1,29 +1,35 @@
 
 var Shoe = function (decksInShoe) {
-  // Initialize options object and defaults
+  'use strict';
 
-  this.cards = [];
+  // Initialize parameters.
+  decksInShoe = decksInShoe || 1;
 
-  this.init = function () {
-    // Convert cards array into a string.
-    var cardsStr = game.deck.cards.join(',') + ',';
-    // Multiply the cards string by the number of decks in the shoe.
-    var shoe = Array(decksInShoe + 1).join(cardsStr);
-    // Convert back to an array and remove the last trailing comma item.
-    this.cards = shoe.split(',').slice(0, -1);
-  };
-};
+  // Multiply a single deck by the size of the shoe.
+  this.cards = myLib.arrayMultiplier(game.deck.cards, decksInShoe);
 
-Shoe.prototype.shuffle = function () {
+  // Use a Fisher-Yates random shuffle algorithm
   // http://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle
   this.cards = _.shuffle(this.cards);
+
 };
 
-Shoe.prototype.dealCard = function () {
-  return this.cards.pop();
+Shoe.prototype.dealCardTo = function (player) {
+  'use strict';
+  game.players[player].addCard(this.cards.pop());
+};
+
+Shoe.prototype.dealAround = function (num) {
+  'use strict';
+  for (var n in _.range(num)) {
+    for (var p in game.players) {
+      game.players[p].addCard(this.cards.pop());
+    }
+  }
 };
 
 Shoe.prototype.count = function () {
+  'use strict';
   return this.cards.length;
 };
 

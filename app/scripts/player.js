@@ -1,5 +1,6 @@
 
 var Player = function (options) {
+  'use strict';
 
   options = options || {};
   this.name = options.name;
