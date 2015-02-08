@@ -17,20 +17,23 @@
     <!-- build:css styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
-
   </head>
   <body>
     <div class="page-wrapper">
 
-      <img class="center-block" src="../images/lets_play_poker1.png">
-      <img class="variant center-block" src="../images/five_card_draw.gif">
+      <header>
+        <img class="center-block" src="../images/lets_play_poker1.png">
+        <img class="variant center-block" src="../images/five_card_draw.gif">
 
-      <div class="top-buttons text-center">
-        <button id="new-game" class="btn btn-primary">New Game</button>
-        <button id="options" class="btn btn-default" data-toggle="modal" data-target="#optionsModal">Options</button>
-      </div>
+        <div class="top-buttons text-center">
+          <button id="newGame" class="btn btn-primary">New Game</button>
+          <button id="options" class="btn btn-default" data-toggle="modal" data-target="#optionsModal">Options</button>
+        </div>
+      </header>
 
-      <div class="modal fade" id="optionsModal" tabindex="-1" role="dialog" aria-labelledby="optionsModalLabel" aria-hidden="true">
+      <section class="pokerTable"></section>
+
+      <section class="modal fade" id="optionsModal" tabindex="-1" role="dialog" aria-labelledby="optionsModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -123,42 +126,8 @@
             </div>
           </div>
         </div>
-      </div>
-
-
-      <div class="player player1">
-        <div class="card card1"></div>
-        <div class="card card2"></div>
-        <div class="card card3"></div>
-        <div class="card card4"></div>
-        <div class="card card5"></div>
-        <div class="card card6"></div>
-        <div class="card card7"></div>
-      </div>
-
-      <div class="player player2">
-        <div class="card card1"></div>
-        <div class="card card2"></div>
-        <div class="card card3"></div>
-        <div class="card card4"></div>
-        <div class="card card5"></div>
-        <div class="card card6"></div>
-        <div class="card card7"></div>
-      </div>
-
-      <div class="player player3">
-        <div class="card card1"></div>
-        <div class="card card2"></div>
-        <div class="card card3"></div>
-        <div class="card card4"></div>
-        <div class="card card5"></div>
-        <div class="card card6"></div>
-        <div class="card card7"></div>
-      </div>
-
-
+      </section>
     </div>
-
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
