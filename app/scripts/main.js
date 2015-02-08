@@ -16,7 +16,10 @@ $('#isJokers, #numPlayers, #dealSpeed').on('click', 'label', function (e) {
 // Start the game.
 $('#newGame').on('click', function () {
 
-  // Initialize and start the game.
+  // Clear the table of any previous game.
+  $('.pokerTable').html('');
+
+  // Initialize a new game instance.
   game = new Game(options);
   game.init();
 

@@ -22,27 +22,30 @@ game:
     player1:  # computer player
       name: Player1
       hand: [KH, KC, 3S, TC, QS]
-      addCard: function()
-      showCard: function()
+      addCard: function ()
+      showCard: function ()
+      showHand: function ()
 
     player2:  # human player
-      name: Leisure Suit Larry
+      name: Player2
       hand: [7S, 2H, 3C, 6H, TD]
       addCard: function ()
       showCard: function ()
+      showHand: function ()
 
     player3:  # computer player
       name: Player3
       hand: [5H, AS, AH, 7C, QC]
       addCard: function ()
       showCard: function ()
+      showHand: function ()
 
   deck:
     cards: [AC, 2C, ..., QS, KS]  # single ordered deck
     cardImageMap: {AC: 0px 0px, fulldeck: x y, KS: -948px -369px}
 
   gameDeck:
-    cards: [AC, 2C, ..., QS, KS]  # shuffled cards (1 or more decks)
+    cards: [7C, QD, ..., 2S, TD]  # shuffled cards (1 or more decks)
     dealCardTo: function ()
     dealAround: function ()
     count: function ()

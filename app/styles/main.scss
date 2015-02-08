@@ -11,32 +11,11 @@ body {
   background: url(../images/green_felt_1024x1024.jpg);
 }
 
-.modal-dialog {
-  width: 400px;
-}
-
-select {
-  margin-bottom: 16px;
-}
-
-.col-align {
-  padding-left: 0;
-  padding-right: 0;
-}
-
-.modal .btn {
-  margin-bottom: 15px;
-}
-
 .page-wrapper {
   position: relative;
   width: $pageWidth;
   margin: 0 auto;
   padding-top: 50px;
-}
-
-.variant {
-  border: 5px solid #A34386;
 }
 
 .top-buttons {
@@ -45,29 +24,81 @@ select {
 
 .player {
   position: absolute;
+  .card {
+    position: absolute;
+    width: $cardWidth;
+    height: $cardHeight;
+  }
 }
 
 .player1 {
-  left: 85px;
-  bottom: -$cardHeight + 80px;
-  transform: rotate(35deg);
+  left: $pageWidth - $maxCardsWidth + 150px;
+  bottom: -$cardHeight + 200px;
+  transform: rotate(-80deg);
 }
 
 .player2 {
-  left: $pageWidth / 2 - $maxCardsWidth / 2;
-  bottom: -$cardHeight - 50px;
-  transform: rotate(0);
-}
-
-.player3 {
   left: $pageWidth - $maxCardsWidth - 50px;
   bottom: -$cardHeight - 30px;
   transform: rotate(-35deg);
 }
 
-.card {
-  position: absolute;
-  width: $cardWidth;
-  height: $cardHeight;
+.player3 {
+  left: $pageWidth / 2 - $maxCardsWidth / 2;
+  bottom: -$cardHeight - 50px;
+  transform: rotate(0);
+}
+
+.player4 {
+  left: 85px;
+  bottom: -$cardHeight + 80px;
+  transform: rotate(35deg);
+}
+
+.player5 {
+  left: 5px;
+  bottom: -$cardHeight + 360px;
+  transform: rotate(80deg);
+}
+
+// .player1 {
+//   left: $pageWidth - $maxCardsWidth - 50px;
+//   bottom: -$cardHeight - 30px;
+//   transform: rotate(-35deg);
+// }
+
+// .player2 {
+//   left: $pageWidth / 2 - $maxCardsWidth / 2;
+//   bottom: -$cardHeight - 50px;
+//   transform: rotate(0);
+// }
+
+// .player3 {
+//   left: 85px;
+//   bottom: -$cardHeight + 80px;
+//   transform: rotate(35deg);
+// }
+
+.modal {
+  .modal-dialog {
+    width: 400px;
+  }
+
+  select {
+    margin-bottom: 16px;
+  }
+
+  .col-align {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .btn {
+    margin-bottom: 15px;
+  }
+
+  .variant {
+    border: 5px solid #A34386;
+  }
 }
 
