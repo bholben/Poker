@@ -13,8 +13,9 @@ var Game = function (opt) {
     jokers: opt.jokers || false
   };
   if (options.variant === '5 Card Draw') {
-    options.decksInShoe = 2;
-    options.jokers = false;
+    // If we are conforming to strict poker standards...
+    // options.decksInShoe = 1;
+    // options.jokers = false;
   }
 
   this.players = {};

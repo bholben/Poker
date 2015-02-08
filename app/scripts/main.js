@@ -4,6 +4,8 @@ var options = {},
 
 // Adjust game options based on user input.
 $('#num-players').on('click', 'label', function (e) {
+  // console.log($(e.target)[0].parents());
+  console.log($(e.target)[0].innerText);
   options.numPlayers = Number($(this)[0].innerText);
 });
 

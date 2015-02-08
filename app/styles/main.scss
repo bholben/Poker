@@ -11,8 +11,17 @@ body {
   background: url(../images/green_felt_1024x1024.jpg);
 }
 
+.modal-dialog {
+  width: 400px;
+}
+
 select {
   margin-bottom: 16px;
+}
+
+.col-align {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .modal .btn {
