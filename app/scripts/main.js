@@ -27,8 +27,14 @@ $('#newGame').on('click', function () {
 
   // Show each player's hand.
   for (var i = 1; i <= game.numPlayers; i++) {
-    $('.pokerTable').append('<div class="player chair' + i + '"></div>');
-    game.players['player' + i].showHand();
+    // Set the players' chairs up in a symmetric horseshoe pattern
+    if (game.numPlayers === 3) {
+      $('.pokerTable').append('<div class="player chair' + (i + 1) + '"></div>');
+      game.players['player' + i].showHand();
+    } else {
+      $('.pokerTable').append('<div class="player chair' + i + '"></div>');
+      game.players['player' + i].showHand();
+    }
     console.log(game.players['player' + i].hand);
   }
 
