@@ -31,49 +31,49 @@ body {
   }
 }
 
-.player1 {
+.chair1 {
   left: $pageWidth - $maxCardsWidth + 150px;
   bottom: -$cardHeight + 200px;
   transform: rotate(-80deg);
 }
 
-.player2 {
+.chair2 {
   left: $pageWidth - $maxCardsWidth - 50px;
   bottom: -$cardHeight - 30px;
   transform: rotate(-35deg);
 }
 
-.player3 {
+.chair3 {
   left: $pageWidth / 2 - $maxCardsWidth / 2;
   bottom: -$cardHeight - 50px;
   transform: rotate(0);
 }
 
-.player4 {
+.chair4 {
   left: 85px;
   bottom: -$cardHeight + 80px;
   transform: rotate(35deg);
 }
 
-.player5 {
+.chair5 {
   left: 5px;
   bottom: -$cardHeight + 360px;
   transform: rotate(80deg);
 }
 
-// .player1 {
+// .chair1 {
 //   left: $pageWidth - $maxCardsWidth - 50px;
 //   bottom: -$cardHeight - 30px;
 //   transform: rotate(-35deg);
 // }
 
-// .player2 {
+// .chair2 {
 //   left: $pageWidth / 2 - $maxCardsWidth / 2;
 //   bottom: -$cardHeight - 50px;
 //   transform: rotate(0);
 // }
 
-// .player3 {
+// .chair3 {
 //   left: 85px;
 //   bottom: -$cardHeight + 80px;
 //   transform: rotate(35deg);

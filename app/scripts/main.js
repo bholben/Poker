@@ -1,3 +1,5 @@
+// Goal is to handle all DOM interactions from this file.
+// Exceptions: game.playerX.showCard(), game.playerX.showHand()
 
 var options = {},
     game;
@@ -25,7 +27,7 @@ $('#newGame').on('click', function () {
 
   // Show each player's hand.
   for (var i = 1; i <= game.numPlayers; i++) {
-    $('.pokerTable').append('<div class="player player' + i + '"></div>');
+    $('.pokerTable').append('<div class="player chair' + i + '"></div>');
     game.players['player' + i].showHand();
     console.log(game.players['player' + i].hand);
   }

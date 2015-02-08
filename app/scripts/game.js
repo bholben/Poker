@@ -42,13 +42,6 @@ var Game = function (opt) {
     this.gameDeck = new Shoe(options.shoeSize);
     this.gameDeck.dealAround(options.initialDeal);
   };
-
-  this.slots = {
-    slot2: 'left: $pageWidth - $maxCardsWidth - 50px; ' +
-           'bottom: -$cardHeight - 30px; ' +
-           'transform: rotate(-35deg);'
-  };
-
 };
 
 
