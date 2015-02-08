@@ -6,17 +6,18 @@ var Game = function (opt) {
   opt = opt || {};
   var options = {
     playerName: opt.playerName || 'Leisure Suit Larry',
-    variant: opt.variant || '5 Card Draw',
-    numPlayers: opt.numPlayers || 3,
-    dealSpeed: opt.dealSpeed || 'fast',
-    decksInShoe: opt.decksInShoe || 1,
-    jokers: opt.jokers || false
+    variant: opt.variant || 'Five Card Draw',
+    numPlayers: Number(opt.numPlayers) || 3,
+    dealSpeed: opt.dealSpeed || 'Instant',
+    shoeSize: Number(opt.shoeSize) || 1,
+    isJokers: opt.isJokers === 'Yes' ? true : false
   };
   if (options.variant === '5 Card Draw') {
     // If we are conforming to strict poker standards...
-    // options.decksInShoe = 1;
-    // options.jokers = false;
+    // options.shoeSize = 1;
+    // options.isJokers = false;
   }
+  this.options = options;
 
   this.players = {};
 
@@ -34,10 +35,10 @@ var Game = function (opt) {
     game.players['player' + playerPosition].name = options.playerName;
 
     // Initialize a single deck of cards.
-    this.deck = new Deck(options.jokers);
+    this.deck = new Deck(options.isJokers);
 
     // Initialize the gameDeck (could be multiple decks in a shoe).
-    this.gameDeck = new Shoe(options.decksInShoe);
+    this.gameDeck = new Shoe(options.shoeSize);
   };
 };
 

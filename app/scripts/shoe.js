@@ -1,12 +1,12 @@
 
-var Shoe = function (decksInShoe) {
+var Shoe = function (shoeSize) {
   'use strict';
 
   // Initialize parameters.
-  decksInShoe = decksInShoe || 1;
+  shoeSize = shoeSize || 1;
 
   // Multiply a single deck by the size of the shoe.
-  this.cards = myLib.arrayMultiplier(game.deck.cards, decksInShoe);
+  this.cards = myLib.arrayMultiplier(game.deck.cards, shoeSize);
 
   // Use a Fisher-Yates random shuffle algorithm
   // http://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle

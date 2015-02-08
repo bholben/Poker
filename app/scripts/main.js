@@ -3,12 +3,17 @@ var options = {},
     game;
 
 // Adjust game options based on user input.
-$('#num-players').on('click', 'label', function (e) {
-  // console.log($(e.target)[0].parents());
-  console.log($(e.target)[0].innerText);
-  options.numPlayers = Number($(this)[0].innerText);
+$('#gameVariant, #shoeSize').on('change', function (e) {
+  options[e.target.id] = e.target.value;
+  console.log(options);
 });
 
+$('#isJokers, #numPlayers, #dealSpeed').on('click', 'label', function (e) {
+  options[e.target.parentNode.id] = e.target.innerText;
+  console.log(options);
+});
+
+// Start the game.
 $('#new-game').on('click', function () {
 
   game = new Game(options);
