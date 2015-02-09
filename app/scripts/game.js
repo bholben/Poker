@@ -42,6 +42,9 @@ var Game = function (opt) {
     // Initialize the gameDeck and make initial deal.
     this.gameDeck = new Shoe(options.shoeSize);
     this.gameDeck.dealAround(options.initialDeal);
+
+    this.players.player2.showScore();
+
   };
 };
 
@@ -58,16 +61,16 @@ Game.prototype.highScore = function (scores) {
       finalists = _.range(scores.length),  // .map(function (val) { return val + 1; }),
       winner;
 
-  console.log(byIndex);
-  console.log(finalists);
+  // console.log(byIndex);
+  // console.log(finalists);
 
   for (var i = 0; i < 8; i++) {
 
     var max = _.max(byIndex[i]);
 
-    console.log(max);
-    console.log(byIndex[i].indexOf(max));
-    console.log(byIndex[i].lastIndexOf(max));
+    // console.log(max);
+    // console.log(byIndex[i].indexOf(max));
+    // console.log(byIndex[i].lastIndexOf(max));
 
     var winningIndex = byIndex[i].indexOf(max),
         winningConfirm = byIndex[i].lastIndexOf(max);
@@ -77,7 +80,7 @@ Game.prototype.highScore = function (scores) {
         (winningIndex === winningConfirm)) {
       winner = game.players['player' + (winningIndex + 1)].name;
 
-      console.log('We have a winner!......');
+      // console.log('We have a winner!......');
 
       return winner;
     } else {

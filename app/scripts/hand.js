@@ -79,26 +79,29 @@ Hand.prototype.twoPair = function () {
 // All suits carry equal weight.
 Hand.prototype.score = function () {
   'use strict';
-  var kind4 = this.ofAKind(4),
-      kind3 = this.ofAKind(3),
-      kind2 = this.ofAKind(2),
-      kind1 = this.ofAKind(1),
-      twoPair = this.twoPair(),
-      straight = this.straight(),
-      flush = this.flush();
+  var kind4 =    Number(this.ofAKind(4)),
+      kind3 =    Number(this.ofAKind(3)),
+      kind2 =    Number(this.ofAKind(2)),
+      kind1 =    Number(this.ofAKind(1)),
+      twoPairH = Number(this.twoPair()[0]),
+      twoPairL = Number(this.twoPair()[1]),
+      straight =        this.straight(),
+      flush =           this.flush(),
+      vals =            this.sortedVals();
 
-  if      (straight && flush) { return _.flatten([8,     0,     0, sortedVals()]); }
-  else if (kind4)             { return _.flatten([7, kind4, kind1, sortedVals()]); }
-  else if (kind3 && kind2)    { return _.flatten([6, kind3, kind2, sortedVals()]); }
-  else if (flush)             { return _.flatten([5,     0,     0, sortedVals()]); }
-  else if (straight)          { return _.flatten([4,     0,     0, sortedVals()]); }
-  else if (kind3)             { return _.flatten([3,     0,     0, sortedVals()]); }
-  else if (twoPair)           { return _.flatten([2,     0,     0, sortedVals()]); }
-  else if (kind2)             { return _.flatten([1,     0,     0, sortedVals()]); }
-  else                        { return _.flatten([0,     0,     0, sortedVals()]); }
+  if      (straight && flush) { return _.flatten([8,        0,        0, vals]); }
+  else if (kind4)             { return _.flatten([7,    kind4,    kind1, vals]); }
+  else if (kind3 && kind2)    { return _.flatten([6,    kind3,    kind2, vals]); }
+  else if (flush)             { return _.flatten([5,        0,        0, vals]); }
+  else if (straight)          { return _.flatten([4,        0,        0, vals]); }
+  else if (kind3)             { return _.flatten([3,    kind3,        0, vals]); }
+  else if (twoPairH)          { return _.flatten([2, twoPairH, twoPairL, vals]); }
+  else if (kind2)             { return _.flatten([1,    kind2,        0, vals]); }
+  else                        { return _.flatten([0,        0,        0, vals]); }
 };
 
-// var myHand = new Hand(['5H', '5C', 'KH', '5S', 'KS']);
+// var myHand = new Hand(["QD", "6C", "7H", "2S", "QC"]);
+// // var myHand = new Hand(['5H', '5C', 'KH', '5S', 'KS']);
 // // var myHand = new Hand(['AH', 'QS', 'QH']);
 // console.log('My Cards: ', myHand.cards);
 // console.log('Sorted Ranks: ', myHand.sortedVals());
@@ -106,5 +109,6 @@ Hand.prototype.score = function () {
 // console.log('Two of a kind: ', myHand.ofAKind(2));
 // console.log('Three of a kind: ', myHand.ofAKind(3));
 // console.log('Two Pair: ', myHand.twoPair());
+// console.log('Score: ', myHand.score());
 
 

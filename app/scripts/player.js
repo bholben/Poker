@@ -41,3 +41,15 @@ Player.prototype.showHand = function () {
   });
 };
 
+Player.prototype.showScore = function () {
+  console.log('me: ', this.hand);
+  var myHand = new Hand(this.hand);
+      myScore = myHand.score();
+
+  console.log(myScore);
+
+  return myScore;
+
+};
+
+
