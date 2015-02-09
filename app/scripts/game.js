@@ -8,12 +8,13 @@ var Game = function (opt) {
     variant: opt.variant || 'Five Card Draw',
     numPlayers: Number(opt.numPlayers) || 3,
     initialDeal: 5,
-    dealSpeed: opt.dealSpeed || 'Instant',
+    dealSpeed: opt.dealSpeed || 'Instant',  // TODO
     shoeSize: Number(opt.shoeSize) || 1,
     isJokers: opt.isJokers === 'Yes' ? true : false
   };
   if (options.variant === 'Five Card Draw') {
     // If we are conforming to strict poker standards...
+    // (better approach is to hide these settings when 5-card draw)
     // options.shoeSize = 1;
     // options.isJokers = false;
     options.initialDeal = 5;
@@ -44,50 +45,51 @@ var Game = function (opt) {
   };
 };
 
-Game.prototype.highScore = function (scoresObj) {
-  s = [
-    [6, 11, 4, 11, 11, 4, 4, 4],
-    [5,  0, 0, 12, 11, 6, 4, 2],
+Game.prototype.highScore = function (scores) {
+
+  // Temporoary test array...
+  scores = [
+    [6,  0, 0, 12, 11, 6, 4, 2],
+    [0, 11, 4, 11, 11, 4, 4, 4],
     [1,  0, 0,  9,  6, 4, 4, 3]
   ];
 
-  s.forEach(function () {
+  var byIndex = myLib.arrayTransform(scores),
+      finalists = _.range(scores.length),  // .map(function (val) { return val + 1; }),
+      winner;
 
-  });
+  console.log(byIndex);
+  console.log(finalists);
 
-  for (var i in s) {
-    console.log(i, s[i]);
+  for (var i = 0; i < 8; i++) {
+
+    var max = _.max(byIndex[i]);
+
+    console.log(max);
+    console.log(byIndex[i].indexOf(max));
+    console.log(byIndex[i].lastIndexOf(max));
+
+    var winningIndex = byIndex[i].indexOf(max),
+        winningConfirm = byIndex[i].lastIndexOf(max);
+
+
+    if ((finalists.indexOf(winningIndex) !== -1) &&
+        (winningIndex === winningConfirm)) {
+      winner = game.players['player' + (winningIndex + 1)].name;
+
+      console.log('We have a winner!......');
+
+      return winner;
+    } else {
+      finalists = [];
+      for (var j = 0, len = byIndex[i].length; j < len; j++) {
+        if (byIndex[i][j] === max) {
+          finalists.push(j);
+
+          // TODO - finish figuring out how to handle column ties.
+        }
+      }
+    }
   }
-
-  console.log(_.max([5, 8, 2]));
-
-  // if (s.player1[0] === 6) { }
 };
-
-var byPlayer = [
-  [11, 12, 13, 14, 15],
-  [21, 22, 23, 24, 25],
-  [31, 32, 33, 34, 35]
-];
-
-
-var col1 = byPlayer.map(function(player) {
-  return player[0];
-});
-
-var col2 = byPlayer.map(function(player) {
-  return player[0], player[1];
-});
-
-var col3 = byPlayer.map(function(player) {
-  return player[0], player[1], player[2];
-});
-
-var byIndex = [col1, col2, col3];
-console.log(byIndex);
-
-
-
-
-
 
