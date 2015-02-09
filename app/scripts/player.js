@@ -7,6 +7,7 @@ var Player = function (options) {
   this.hand = [];
   this.num = Number(this.name.slice(6));
 
+  // This is the key to setting up 3 or 5 chairs.
   this.chairClass = function () {
     return (game.numPlayers === 3) ? '.chair' + (this.num + 1) : '.chair' + this.num;
   };
