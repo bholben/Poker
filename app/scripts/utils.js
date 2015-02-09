@@ -24,7 +24,16 @@ var myLib = {
     'use strict';
     var str = arr.join(',') + ',',
         repeatingString = str.multiply(count);
-    return repeatingString.slice(0, -1).split(',');
+    var results = repeatingString.slice(0, -1).split(',');
+    var item0 = results[0];
+    if (!isNaN(Number(item0))) {
+      // console.log('here');
+      results = results.map(function (item) {
+        return Number(item);
+      });
+    }
+    // console.log(results);
+    return results;
   }
 };
 

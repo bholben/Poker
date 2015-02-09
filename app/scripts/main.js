@@ -38,5 +38,9 @@ $('#newGame').on('click', function () {
     console.log(game.players['player' + i].hand);
   }
 
+
+  console.log(game.highScore());
+
+
 });
 

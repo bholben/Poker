@@ -44,4 +44,50 @@ var Game = function (opt) {
   };
 };
 
+Game.prototype.highScore = function (scoresObj) {
+  s = [
+    [6, 11, 4, 11, 11, 4, 4, 4],
+    [5,  0, 0, 12, 11, 6, 4, 2],
+    [1,  0, 0,  9,  6, 4, 4, 3]
+  ];
+
+  s.forEach(function () {
+
+  });
+
+  for (var i in s) {
+    console.log(i, s[i]);
+  }
+
+  console.log(_.max([5, 8, 2]));
+
+  // if (s.player1[0] === 6) { }
+};
+
+var byPlayer = [
+  [11, 12, 13, 14, 15],
+  [21, 22, 23, 24, 25],
+  [31, 32, 33, 34, 35]
+];
+
+
+var col1 = byPlayer.map(function(player) {
+  return player[0];
+});
+
+var col2 = byPlayer.map(function(player) {
+  return player[0], player[1];
+});
+
+var col3 = byPlayer.map(function(player) {
+  return player[0], player[1], player[2];
+});
+
+var byIndex = [col1, col2, col3];
+console.log(byIndex);
+
+
+
+
+
 
